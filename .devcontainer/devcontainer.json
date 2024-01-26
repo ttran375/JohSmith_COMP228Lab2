@@ -7,7 +7,8 @@
 				"vscjava.vscode-java-pack",
 				"redhat.fabric8-analytics",
 				"sohibe.java-generate-setters-getters",
-		    	"streetsidesoftware.code-spell-checker"
+		    	"streetsidesoftware.code-spell-checker",
+				"DavidAnson.vscode-markdownlint"
             ]
         }
     }
