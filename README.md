@@ -2,35 +2,7 @@
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ttran375/JohSmith_COMP228Lab2)
 
-You must name your Eclipse/IntelliJ project according to the following
-rule:
-
-**YourFullName_COMP228Labnumber**
-
-Example: **JohSmith_COMP228Lab2**
-
-Each exercise should be placed in a separate package named *exercise1*,
-*exercise2*, etc.
-
-Submit your assignment in a **ZIP file** that is named according to the
-following rule:
-
-**YourLastName_COMP228Labnumber.ZIP**
-
-Example: **JohSmith_COMP228Lab2.ZIP**
-
-Apply the naming conventions for variables, methods, classes, and
-packages:
-
-\- *variable names* start with a *lowercase* character
-
-\- *classes* start with an *uppercase* character
-
-\- **packages** use only *lowercase* characters
-
-\- *methods* start with a *lowercase* character
-
-**<u>Exercise 1:</u>**
+## Exercise 1
 
 Write a Java application that simulates a test. The test contains **at
 least five** questions about first three lectures of this course. Each
@@ -85,7 +57,7 @@ calling **inputAnswer** method.
 
 (5 marks)
 
-**<u>Exercise 2:</u>**
+## Exercise 2
 
 Design a Lotto class with one array instance variable to hold three
 random integer values (from 1 to 9). Include a constructor that randomly
@@ -102,7 +74,7 @@ Use methods of JOptionPane class to interact with the user.
 
 (3 marks)
 
-**<u>Exercise 3:</u>**
+## Exercise 3
 
 Write a Java class that implements a set of three overloaded static
 methods. The methods should have different set of parameters and perform
