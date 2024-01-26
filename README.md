@@ -1,4 +1,4 @@
-# LAB \#1 – Java Class
+# LAB \#2 – Java Methods
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ttran375/JohSmith_COMP228Lab2)
 
