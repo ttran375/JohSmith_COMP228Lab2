@@ -1,7 +1,6 @@
 package exercise2;
 
 import java.util.Random;
-import javax.swing.JOptionPane;
 
 public class Lotto {
     private int[] numbers = new int[3];
