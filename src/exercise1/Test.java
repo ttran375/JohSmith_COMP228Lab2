@@ -5,22 +5,22 @@ import java.util.Random;
 
 public class Test {
     private final String[] questions = {
-            "Question 1",
-            "Question 2",
-            "Question 3",
-            "Question 4",
-            "Question 5"
+            "Question 1: Which of the following tools support the software-development process, including editors for writing and editing programs and debuggers for locating logic errors—errors that cause programs to execute incorrectly?",
+            "Question 2: What is the main function of a Java compiler?",
+            "Question 3: Which of the following components does a Java application need to have at least one of?",
+            "Question 4: Which of the following typically groups related classes so that they could be imported into programs and reused?",
+            "Question 5: There are variables for which each object of a class does not need its own separate copy. They are called_______________."
     };
 
     private final String[][] options = {
-            { "Option 1", "Option 2", "Option 3", "Option 4" },
-            { "Option 1", "Option 2", "Option 3", "Option 4" },
-            { "Option 1", "Option 2", "Option 3", "Option 4" },
-            { "Option 1", "Option 2", "Option 3", "Option 4" },
-            { "Option 1", "Option 2", "Option 3", "Option 4" }
+            { "Java Development Kit (JDK)", "Java Virtual Machine (JVM)", "Java Integrated Development Envronments (IDE)", "Java Application Programming Interfaces (API)" },
+            { "It translates the Java source code into bytecodes that represent the tasks to execute.", "It places the program in memory to execute it", "It executes the bytecodes", "It examines the bytecodes to ensure that they  are valid and do not violate Java’s security restrictions." },
+            { "Local variable", "Instance variable", "Non-static Method", "Class" },
+            { "Package", "Method", "IDE", "Function" },
+            { "class variables", "constants", "local variables", "instance variables" }
     };
 
-    private final int[] answers = { 0, 1, 2, 3, 1 };
+    private final int[] answers = { 2, 0, 3, 0, 0 };
     private int score = 0;
 
     public void simulateQuestion(int questionNumber) {
@@ -41,12 +41,21 @@ public class Test {
 
     public void generateMessage(boolean isCorrect) {
         Random random = new Random();
-        String message = switch (random.nextInt(4)) {
-            case 0 -> isCorrect ? "Excellent!" : "No. Please try again";
-            case 1 -> isCorrect ? "Good!" : "Wrong. Try once more";
-            case 2 -> isCorrect ? "Keep up the good work!" : "Don't give up!";
-            default -> isCorrect ? "Nice work!" : "No. Keep trying..";
-        };
+        String message;
+        switch (random.nextInt(4)) {
+            case 0:
+                message = isCorrect ? "Excellent!" : "No. Please try again";
+                break;
+            case 1:
+                message = isCorrect ? "Good!" : "Wrong. Try once more";
+                break;
+            case 2:
+                message = isCorrect ? "Keep up the good work!" : "Don't give up!";
+                break;
+            default:
+                message = isCorrect ? "Nice work!" : "No. Keep trying..";
+                break;
+        }
         JOptionPane.showMessageDialog(null, message);
     }
 
