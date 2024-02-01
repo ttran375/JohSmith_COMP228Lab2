@@ -8,14 +8,14 @@ public class Main {
         int userNumber = -1;
         int tries = 0;
 
-        while(userNumber < 3 || userNumber > 27) {
+        while (userNumber < 3 || userNumber > 27) {
             try {
                 input = JOptionPane.showInputDialog("Enter a number between 3 and 27");
                 userNumber = Integer.parseInt(input);
-                if(userNumber < 3 || userNumber > 27) {
+                if (userNumber < 3 || userNumber > 27) {
                     JOptionPane.showMessageDialog(null, "The number must be between 3 and 27. Please try again.");
                 }
-            } catch(NumberFormatException e) {
+            } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Invalid input. Please enter a valid number.");
             }
             tries++;

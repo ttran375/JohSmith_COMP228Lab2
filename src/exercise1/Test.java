@@ -20,14 +20,29 @@ public class Test {
             { "1. class variables", "2. constants", "3. local variables", "4. instance variables" }
     };
 
-    private final int[] answers = { 2, 0, 3, 0, 0 };
+    private final int[] answers = { 3, 1, 4, 1, 1 };
     private int score = 0;
 
     public void simulateQuestion(int questionNumber) {
         String question = questions[questionNumber];
         String[] option = options[questionNumber];
-        String answer = JOptionPane.showInputDialog(null, question + "\n" + String.join("\n", option));
+        String answer;
+        do {
+            answer = JOptionPane.showInputDialog(null, question + "\n" + String.join("\n", option));
+            if (!isValidAnswer(answer)) {
+                JOptionPane.showMessageDialog(null, "Invalid input. Please enter a number between 1 and 4.");
+            }
+        } while (!isValidAnswer(answer));
         checkAnswer(questionNumber, answer);
+    }
+    
+    private boolean isValidAnswer(String answer) {
+        try {
+            int answerInt = Integer.parseInt(answer);
+            return answerInt >= 1 && answerInt <= 4;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 
     public void checkAnswer(int questionNumber, String answer) {
