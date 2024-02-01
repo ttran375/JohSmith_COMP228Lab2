@@ -1,7 +1,5 @@
 # LAB \#2 – Java Methods
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ttran375/JohSmith_COMP228Lab2)
-
 ## Exercise 1
 
 Write a Java application that simulates a test. The test contains **at
