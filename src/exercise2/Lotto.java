@@ -3,7 +3,7 @@ package exercise2;
 import java.util.Random;
 
 public class Lotto {
-    private int[] numbers = new int[3];
+    private final int[] numbers = new int[3];
 
     public Lotto() {
         Random rand = new Random();

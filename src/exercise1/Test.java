@@ -13,11 +13,11 @@ public class Test {
     };
 
     private final String[][] options = {
-            { "Java Development Kit (JDK)", "Java Virtual Machine (JVM)", "Java Integrated Development Envronments (IDE)", "Java Application Programming Interfaces (API)" },
-            { "It translates the Java source code into bytecodes that represent the tasks to execute.", "It places the program in memory to execute it", "It executes the bytecodes", "It examines the bytecodes to ensure that they  are valid and do not violate Java’s security restrictions." },
-            { "Local variable", "Instance variable", "Non-static Method", "Class" },
-            { "Package", "Method", "IDE", "Function" },
-            { "class variables", "constants", "local variables", "instance variables" }
+            { "1. Java Development Kit (JDK)", "2. Java Virtual Machine (JVM)", "3. Java Integrated Development Envronments (IDE)", "4. Java Application Programming Interfaces (API)" },
+            { "1. It translates the Java source code into bytecodes that represent the tasks to execute.", "2. It places the program in memory to execute it", "3. It executes the bytecodes", "4. It examines the bytecodes to ensure that they  are valid and do not violate Java’s security restrictions." },
+            { "1. Local variable", "2. Instance variable", "2. Non-static Method", "2. Class" },
+            { "1. Package", "2. Method", "3. IDE", "4. Function" },
+            { "1. class variables", "2. constants", "3. local variables", "4. instance variables" }
     };
 
     private final int[] answers = { 2, 0, 3, 0, 0 };
