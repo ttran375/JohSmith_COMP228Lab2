@@ -13,8 +13,12 @@ public class Test {
     };
 
     private final String[][] options = {
-            { "1. Java Development Kit (JDK)", "2. Java Virtual Machine (JVM)", "3. Java Integrated Development Envronments (IDE)", "4. Java Application Programming Interfaces (API)" },
-            { "1. It translates the Java source code into bytecodes that represent the tasks to execute.", "2. It places the program in memory to execute it", "3. It executes the bytecodes", "4. It examines the bytecodes to ensure that they  are valid and do not violate Java’s security restrictions." },
+            { "1. Java Development Kit (JDK)", "2. Java Virtual Machine (JVM)",
+                    "3. Java Integrated Development Envronments (IDE)",
+                    "4. Java Application Programming Interfaces (API)" },
+            { "1. It translates the Java source code into bytecodes that represent the tasks to execute.",
+                    "2. It places the program in memory to execute it", "3. It executes the bytecodes",
+                    "4. It examines the bytecodes to ensure that they  are valid and do not violate Java’s security restrictions." },
             { "1. Local variable", "2. Instance variable", "2. Non-static Method", "2. Class" },
             { "1. Package", "2. Method", "3. IDE", "4. Function" },
             { "1. class variables", "2. constants", "3. local variables", "4. instance variables" }
@@ -35,7 +39,7 @@ public class Test {
         } while (!isValidAnswer(answer));
         checkAnswer(questionNumber, answer);
     }
-    
+
     private boolean isValidAnswer(String answer) {
         try {
             int answerInt = Integer.parseInt(answer);
@@ -75,7 +79,8 @@ public class Test {
     }
 
     public void inputAnswer() {
-        for (int i = 0; i < questions.length; i++) simulateQuestion(i);
+        for (int i = 0; i < questions.length; i++)
+            simulateQuestion(i);
         JOptionPane.showMessageDialog(null, "You scored " + score + " out of " + questions.length);
     }
 }

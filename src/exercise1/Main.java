@@ -13,6 +13,7 @@ public class Main {
 
     /**
      * This is the main method which makes use of inputAnswer method.
+     * 
      * @param args Unused.
      */
     public static void main(final String[] args) {
