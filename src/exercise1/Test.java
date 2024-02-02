@@ -3,31 +3,51 @@ package exercise1;
 import javax.swing.JOptionPane;
 import java.util.Random;
 
-public class Test {
+/**
+ * This class represents a test with multiple choice questions.
+ */
+public final class Test {
+    private static final int MAX_ANSWER = 4;
+
+    /**
+     * Array of questions for the test.
+     */
     private final String[] questions = {
-            "Question 1: Which of the following tools support the software-development process, including editors for writing and editing programs and debuggers for locating logic errors—errors that cause programs to execute incorrectly?",
+            "Question 1: Which of the following tools support the software-development process...",
             "Question 2: What is the main function of a Java compiler?",
-            "Question 3: Which of the following components does a Java application need to have at least one of?",
-            "Question 4: Which of the following typically groups related classes so that they could be imported into programs and reused?",
-            "Question 5: There are variables for which each object of a class does not need its own separate copy. They are called_______________."
+            "Question 3: Which of the following components does a Java application need...",
+            "Question 4: Which of the following typically groups related classes...",
+            "Question 5: There are variables for which each object of a class..."
     };
 
+    /**
+     * Array of options for each question in the test.
+     */
     private final String[][] options = {
-            { "1. Java Development Kit (JDK)", "2. Java Virtual Machine (JVM)",
-                    "3. Java Integrated Development Envronments (IDE)",
-                    "4. Java Application Programming Interfaces (API)" },
-            { "1. It translates the Java source code into bytecodes that represent the tasks to execute.",
-                    "2. It places the program in memory to execute it", "3. It executes the bytecodes",
-                    "4. It examines the bytecodes to ensure that they  are valid and do not violate Java’s security restrictions." },
+            { "1. JDK", "2. JVM", "3. IDE", "4. API" },
+            { "1. Translates source code", "2. Places program in memory", "3. Executes bytecodes",
+                    "4. Examines bytecodes" },
             { "1. Local variable", "2. Instance variable", "2. Non-static Method", "2. Class" },
             { "1. Package", "2. Method", "3. IDE", "4. Function" },
             { "1. class variables", "2. constants", "3. local variables", "4. instance variables" }
     };
 
+    /**
+     * Array of correct answers for each question in the test.
+     */
     private final int[] answers = { 3, 1, 4, 1, 1 };
+
+    /**
+     * The score of the test.
+     */
     private int score = 0;
 
-    public void simulateQuestion(int questionNumber) {
+    /**
+     * Simulates a question by displaying it and checking the answer.
+     *
+     * @param questionNumber the number of the question to simulate
+     */
+    public void simulateQuestion(final int questionNumber) {
         String question = questions[questionNumber];
         String[] option = options[questionNumber];
         String answer;
@@ -40,16 +60,28 @@ public class Test {
         checkAnswer(questionNumber, answer);
     }
 
+    /**
+     * Checks if the given answer is valid.
+     *
+     * @param answer the answer to check
+     * @return true if the answer is valid, false otherwise
+     */
     private boolean isValidAnswer(String answer) {
         try {
             int answerInt = Integer.parseInt(answer);
-            return answerInt >= 1 && answerInt <= 4;
+            return answerInt >= 1 && answerInt <= MAX_ANSWER;
         } catch (NumberFormatException e) {
             return false;
         }
     }
 
-    public void checkAnswer(int questionNumber, String answer) {
+    /**
+     * Checks the given answer and updates the score if it is correct.
+     *
+     * @param questionNumber the number of the question
+     * @param answer         the answer to check
+     */
+    public void checkAnswer(final int questionNumber, final String answer) {
         if (Integer.parseInt(answer) == answers[questionNumber]) {
             score++;
             generateMessage(true);
@@ -58,10 +90,15 @@ public class Test {
         }
     }
 
-    public void generateMessage(boolean isCorrect) {
+    /**
+     * Generates a message based on whether the answer is correct or not.
+     *
+     * @param isCorrect true if the answer is correct, false otherwise
+     */
+    public void generateMessage(final boolean isCorrect) {
         Random random = new Random();
         String message;
-        switch (random.nextInt(4)) {
+        switch (random.nextInt(MAX_ANSWER)) {
             case 0:
                 message = isCorrect ? "Excellent!" : "No. Please try again";
                 break;
@@ -78,9 +115,13 @@ public class Test {
         JOptionPane.showMessageDialog(null, message);
     }
 
+    /**
+     * Inputs the answer for each question and displays the score at the end.
+     */
     public void inputAnswer() {
-        for (int i = 0; i < questions.length; i++)
+        for (int i = 0; i < questions.length; i++) {
             simulateQuestion(i);
+        }
         JOptionPane.showMessageDialog(null, "You scored " + score + " out of " + questions.length);
     }
 }
