@@ -7,5 +7,10 @@
     "java.configuration.updateBuildConfiguration": "interactive",
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "redhat.java",
-    "files.insertFinalNewline": true
+    "files.insertFinalNewline": true,
+    "editor.trimAutoWhitespace": true,
+    "[java]": {
+        "files.trimTrailingWhitespace": true,
+        "editor.renderWhitespace": "all"
+    }
 }
