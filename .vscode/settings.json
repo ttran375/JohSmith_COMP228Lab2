@@ -12,5 +12,6 @@
     "[java]": {
         "files.trimTrailingWhitespace": true,
         "editor.renderWhitespace": "all"
-    }
+    },
+    "prettier.prettierPath": ".editorconfig"
 }

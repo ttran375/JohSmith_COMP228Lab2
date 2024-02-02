@@ -9,7 +9,8 @@
 				"sohibe.java-generate-setters-getters",
 		    	"streetsidesoftware.code-spell-checker",
 				"DavidAnson.vscode-markdownlint",
-				"EditorConfig.EditorConfig"
+				"EditorConfig.EditorConfig",
+                "mwpb.java-prettier-formatter"
             ]
         }
     }
