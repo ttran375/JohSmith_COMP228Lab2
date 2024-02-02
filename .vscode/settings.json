@@ -10,8 +10,9 @@
     "files.insertFinalNewline": true,
     "editor.trimAutoWhitespace": true,
     "[java]": {
-        "files.trimTrailingWhitespace": true,
-        "editor.renderWhitespace": "all"
+        "editor.defaultFormatter": "ilkka.google-java-format",
     },
-    "prettier.prettierPath": ".editorconfig"
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
 }
