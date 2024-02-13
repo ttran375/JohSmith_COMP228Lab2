@@ -7,11 +7,19 @@ import javax.swing.JOptionPane;
  * This class represents a test with multiple choice questions.
  */
 public final class Test {
+    /**
+     * The main entry point for the application.
+     *
+     * @param args The command-line arguments passed to the program.
+     */
     public static void main(final String[] args) {
         Test test = new Test();
         test.inputAnswer();
     }
 
+    /**
+     * The maximum number of answers allowed.
+     */
     private static final int MAX_ANSWER = 4;
 
     /**
@@ -29,7 +37,7 @@ public final class Test {
      * Array of options for each question in the test.
      */
     private final String[][] options = {
-            {"1. JDK", "2. JVM", "3. IDE", "4. API"},
+            { "1. JDK", "2. JVM", "3. IDE", "4. API" },
             {
                     "1. Translates source code",
                     "2. Places program in memory",
@@ -42,7 +50,7 @@ public final class Test {
                     "3. Non-static Method",
                     "4. Class",
             },
-            {"1. Package", "2. Method", "3. IDE", "4. Function"},
+            { "1. Package", "2. Method", "3. IDE", "4. Function" },
             {
                     "1. class variables",
                     "2. constants",
@@ -54,7 +62,7 @@ public final class Test {
     /**
      * Array of correct answers for each question in the test.
      */
-    private final int[] answers = {3, 1, 4, 1, 1};
+    private final int[] answers = { 3, 1, 4, 1, 1 };
 
     /**
      * The score of the test.
@@ -89,7 +97,7 @@ public final class Test {
      * @param answer the answer to check
      * @return true if the answer is valid, false otherwise
      */
-    private boolean isValidAnswer(String answer) {
+    private boolean isValidAnswer(final String answer) {
         try {
             int answerInt = Integer.parseInt(answer);
             return answerInt >= 1 && answerInt <= MAX_ANSWER;
@@ -129,9 +137,9 @@ public final class Test {
                 message = isCorrect ? "Good!" : "Wrong. Try once more";
                 break;
             case 2:
-                message = isCorrect 
-                ? "Keep up the good work!" 
-                : "Don't give up!";
+                message = isCorrect
+                        ? "Keep up the good work!"
+                        : "Don't give up!";
                 break;
             default:
                 message = isCorrect ? "Nice work!" : "No. Keep trying..";
@@ -147,12 +155,14 @@ public final class Test {
         for (int i = 0; i < questions.length; i++) {
             simulateQuestion(i);
         }
-        double percentage = (double) score / questions.length * 100;
+        final double PERCENTAGE_FACTOR = 100.0;
+        double percentage = (double) score / questions.length
+            * PERCENTAGE_FACTOR;
         JOptionPane.showMessageDialog(
                 null,
-                "You scored " 
-                    + String.format("%.2f", percentage)
-                    + "%"
-                    + " out of 100%");
+                "You scored "
+                        + String.format("%.2f", percentage)
+                        + "%"
+                        + " out of 100%");
     }
 }
