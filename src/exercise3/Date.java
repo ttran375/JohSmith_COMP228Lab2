@@ -20,24 +20,19 @@ public class Date {
     private int year;
 
     /**
- * The default day used when no day is specified.
- */
-private static final int DEFAULT_DAY = 1;
+     * The default day used when no day is specified.
+     */
+    private static final int DEFAULT_DAY = 1;
 
-/**
- * The default month used when no month is specified.
- */
-private static final int DEFAULT_MONTH = 1;
+    /**
+     * The default month used when no month is specified.
+     */
+    private static final int DEFAULT_MONTH = 1;
 
-/**
- * The default year used when no year is specified.
- */
-private static final int DEFAULT_YEAR = 2022;
-
-/**
- * The number of months in a year.
- */
-private static final int MONTHS_IN_YEAR = 12;
+    /**
+     * The default year used when no year is specified.
+     */
+    private static final int DEFAULT_YEAR = 2022;
 
     /**
      * Constructs a Date object with the given day, month, and year components.
