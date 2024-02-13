@@ -10,7 +10,7 @@ public class Date {
 
     /**
      * Constructs a Date object with the given day, month, and year components.
-     * 
+     *
      * @param day   The day component.
      * @param month The month component.
      * @param year  The year component.
@@ -31,7 +31,7 @@ public class Date {
 
     /**
      * Adds the specified number of days to the date.
-     * 
+     *
      * @param days The number of days to add.
      */
     public void add(int days) {
@@ -41,7 +41,7 @@ public class Date {
 
     /**
      * Adds the specified number of months and days to the date.
-     * 
+     *
      * @param months The number of months to add.
      * @param days   The number of days to add.
      */
@@ -53,7 +53,7 @@ public class Date {
 
     /**
      * Adds the components of another Date to this Date.
-     * 
+     *
      * @param other The Date to add.
      */
     public void add(Date other) {
@@ -65,7 +65,7 @@ public class Date {
 
     /**
      * Returns a string representation of the Date in the format "YYYY-MMM-DD".
-     * 
+     *
      * @return The string representation of the Date.
      */
     @Override
@@ -76,7 +76,7 @@ public class Date {
 
     /**
      * Gets the three-letter abbreviation of the month for a given month number.
-     * 
+     *
      * @param month The month number (1-12).
      * @return The three-letter abbreviation of the month.
      */
@@ -87,7 +87,7 @@ public class Date {
 
     /**
      * Gets the number of days in a specific month of a given year.
-     * 
+     *
      * @param year  The year.
      * @param month The month (1-12).
      * @return The number of days in the specified month.
@@ -98,7 +98,7 @@ public class Date {
 
     /**
      * Checks if a given year is a leap year.
-     * 
+     *
      * @param year The year.
      * @return True if the year is a leap year, false otherwise.
      */
