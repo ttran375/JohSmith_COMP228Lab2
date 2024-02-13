@@ -5,13 +5,6 @@ public class Date {
     private int month;
     private int year;
 
-    private static final int DAYS_IN_FEB_LEAP_YEAR = 29;
-    private static final int DAYS_IN_FEB_NON_LEAP_YEAR = 28;
-    private static final int DAYS_IN_SHORT_MONTH = 30;
-    private static final int DAYS_IN_LONG_MONTH = 31;
-
-    private static final int MONTHS_IN_YEAR = 12;
-
     public Date(final int inputDay, final int inputMonth, final int inputYear) {
         this.day = inputDay;
         this.month = inputMonth;
@@ -95,6 +88,11 @@ public class Date {
         }
     }
 
+    private static final int DAYS_IN_FEB_LEAP_YEAR = 29;
+    private static final int DAYS_IN_FEB_NON_LEAP_YEAR = 28;
+    private static final int DAYS_IN_SHORT_MONTH = 30;
+    private static final int DAYS_IN_LONG_MONTH = 31;
+
     private static int getDaysInMonth(final int year, final int month) {
         switch (month) {
             case FEBRUARY:
@@ -120,6 +118,8 @@ public class Date {
             && year % LEAP_YEAR_DIVISOR_2 != 0)
             || (year % LEAP_YEAR_DIVISOR_3 == 0);
     }
+
+    private static final int MONTHS_IN_YEAR = 12;
 
     private void normalize() {
         int daysInMonth = getDaysInMonth(year, month);
