@@ -98,7 +98,9 @@ public class Date {
     private static int getDaysInMonth(final int year, final int month) {
         switch (month) {
             case FEBRUARY:
-                return isLeapYear(year) ? DAYS_IN_FEB_LEAP_YEAR : DAYS_IN_FEB_NON_LEAP_YEAR;
+                return isLeapYear(year)
+                    ? DAYS_IN_FEB_LEAP_YEAR
+                    : DAYS_IN_FEB_NON_LEAP_YEAR;
             case APRIL:
             case JUNE:
             case SEPTEMBER:
