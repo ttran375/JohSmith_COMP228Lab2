@@ -31,7 +31,7 @@ public final class Lotto {
 
     /**
      * Returns the generated numbers.
-     * 
+     *
      * @return array of generated numbers
      */
     public final int[] getNumbers() {
@@ -40,7 +40,7 @@ public final class Lotto {
 
     /**
      * Returns the sum of the generated numbers.
-     * 
+     *
      * @return sum of the numbers
      */
     public final int sum() {
@@ -53,7 +53,7 @@ public final class Lotto {
 
     /**
      * Main method for the Lotto game.
-     * 
+     *
      * @param args should be final
      */
     public static void main(final String[] args) {
@@ -71,6 +71,6 @@ public final class Lotto {
                 return;
             }
         }
-        JOptionPane.showMessageDialog(null, "Computer wins! Good luck next time.");
+        JOptionPane.showMessageDialog(null, "Computer wins!");
     }
 }
