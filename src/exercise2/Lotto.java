@@ -34,7 +34,7 @@ public final class Lotto {
      *
      * @return array of generated numbers
      */
-    public final int[] getNumbers() {
+    public int[] getNumbers() {
         return numbers;
     }
 
@@ -43,7 +43,7 @@ public final class Lotto {
      *
      * @return sum of the numbers
      */
-    public final int sum() {
+    public int sum() {
         int sum = 0;
         for (int num : numbers) {
             sum += num;
