@@ -7,16 +7,16 @@ public class Date {
         final int START_YEAR = 2024;
         final int DAYS_TO_ADD = 31;
         final int MONTHS_TO_ADD = 29;
-    
+
         Date date = new Date(START_DAY, START_MONTH, START_YEAR);
         System.out.println(date.toString());
-    
+
         date.add(DAYS_TO_ADD);
         System.out.println(date.toString());
-    
+
         date.add(0, MONTHS_TO_ADD);
         System.out.println(date.toString());
-    
+
         Date otherDate = new Date(START_DAY, START_MONTH, 1);
         date.add(otherDate);
         System.out.println(date.toString());
