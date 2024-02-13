@@ -1,46 +1,34 @@
 package exercise3;
 
-/**
- * Represents a date with day, month, and year components.
- */
 public class Date {
-    /**
-     * The day component of the date.
-     */
     private int day;
-
-    /**
-     * The month component of the date.
-     */
     private int month;
-
-    /**
-     * The year component of the date.
-     */
     private int year;
 
-    /**
-     * The default day used when no day is specified.
-     */
     private static final int DEFAULT_DAY = 1;
-
-    /**
-     * The default month used when no month is specified.
-     */
     private static final int DEFAULT_MONTH = 1;
-
-    /**
-     * The default year used when no year is specified.
-     */
     private static final int DEFAULT_YEAR = 2022;
 
-    /**
-     * Constructs a Date object with the given day, month, and year components.
-     *
-     * @param inputDay   The day component.
-     * @param inputMonth The month component.
-     * @param inputYear  The year component.
-     */
+    private static final int JANUARY = 1;
+    private static final int FEBRUARY = 2;
+    private static final int MARCH = 3;
+    private static final int APRIL = 4;
+    private static final int MAY = 5;
+    private static final int JUNE = 6;
+    private static final int JULY = 7;
+    private static final int AUGUST = 8;
+    private static final int SEPTEMBER = 9;
+    private static final int OCTOBER = 10;
+    private static final int NOVEMBER = 11;
+    private static final int DECEMBER = 12;
+
+    private static final int DAYS_IN_FEB_LEAP_YEAR = 29;
+    private static final int DAYS_IN_FEB_NON_LEAP_YEAR = 28;
+    private static final int DAYS_IN_SHORT_MONTH = 30;
+    private static final int DAYS_IN_LONG_MONTH = 31;
+
+    private static final int MONTHS_IN_YEAR = 12;
+
     public Date(final int inputDay, final int inputMonth, final int inputYear) {
         this.day = inputDay;
         this.month = inputMonth;
@@ -48,40 +36,21 @@ public class Date {
         normalize();
     }
 
-    /**
-     * Default constructor initializes the date to January 1, 2022.
-     */
     public Date() {
         this(DEFAULT_DAY, DEFAULT_MONTH, DEFAULT_YEAR);
     }
 
-    /**
-     * Adds the specified number of days to the date.
-     *
-     * @param daysToAdd The number of days to add.
-     */
     public void add(final int daysToAdd) {
         day += daysToAdd;
         normalize();
     }
 
-    /**
-     * Adds the specified number of months and days to the date.
-     *
-     * @param monthsToAdd The number of months to add.
-     * @param daysToAdd   The number of days to add.
-     */
     public void add(final int monthsToAdd, final int daysToAdd) {
         month += monthsToAdd;
         day += daysToAdd;
         normalize();
     }
 
-    /**
-     * Adds the components of another Date to this Date.
-     *
-     * @param other The Date to add.
-     */
     public void add(final Date other) {
         year += other.year;
         month += other.month;
@@ -89,82 +58,58 @@ public class Date {
         normalize();
     }
 
-    /**
-     * Returns a string representation of the Date in the format "YYYY-MMM-DD".
-     *
-     * @return The string representation of the Date.
-     */
     @Override
     public String toString() {
         String monthText = getMonthText(month);
         return year + "-" + monthText + "-" + day;
     }
 
-    /**
-     * Gets the three-letter abbreviation of the month for a given month number.
-     *
-     * @param month The month number (1-12).
-     * @return The three-letter abbreviation of the month.
-     */
-    public static String getMonthText(int month) {
+    public static String getMonthText(final int month) {
         switch (month) {
-            case 1:
+            case JANUARY:
                 return "Jan";
-            case 2:
+            case FEBRUARY:
                 return "Feb";
-            case 3:
+            case MARCH:
                 return "Mar";
-            case 4:
+            case APRIL:
                 return "Apr";
-            case 5:
+            case MAY:
                 return "May";
-            case 6:
+            case JUNE:
                 return "Jun";
-            case 7:
+            case JULY:
                 return "Jul";
-            case 8:
+            case AUGUST:
                 return "Aug";
-            case 9:
+            case SEPTEMBER:
                 return "Sep";
-            case 10:
+            case OCTOBER:
                 return "Oct";
-            case 11:
+            case NOVEMBER:
                 return "Nov";
-            case 12:
+            case DECEMBER:
                 return "Dec";
             default:
                 return "Unknown";
         }
     }
 
-    /**
-     * Gets the number of days in a specific month of a given year.
-     *
-     * @param year  The year.
-     * @param month The month (1-12).
-     * @return The number of days in the specified month.
-     */
-    private static int getDaysInMonth(int year, int month) {
+    private static int getDaysInMonth(final int year, final int month) {
         switch (month) {
-            case 2:
-                return isLeapYear(year) ? 29 : 28;
-            case 4:
-            case 6:
-            case 9:
-            case 11:
-                return 30;
+            case FEBRUARY:
+                return isLeapYear(year) ? DAYS_IN_FEB_LEAP_YEAR : DAYS_IN_FEB_NON_LEAP_YEAR;
+            case APRIL:
+            case JUNE:
+            case SEPTEMBER:
+            case NOVEMBER:
+                return DAYS_IN_SHORT_MONTH;
             default:
-                return 31;
+                return DAYS_IN_LONG_MONTH;
         }
     }
 
-    /**
-     * Checks if a given year is a leap year.
-     *
-     * @param year The year.
-     * @return True if the year is a leap year, false otherwise.
-     */
-    private static boolean isLeapYear(int year) {
+    private static boolean isLeapYear(final int year) {
         return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
     }
 
@@ -175,8 +120,8 @@ public class Date {
             month++;
         }
 
-        while (month > 12) {
-            month -= 12;
+        while (month > MONTHS_IN_YEAR) {
+            month -= MONTHS_IN_YEAR;
             year++;
         }
     }
