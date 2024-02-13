@@ -1,5 +1,9 @@
 # LAB \#2 – Java Methods
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ttran375/comp228-lab2)
+
+[![Style Check](https://github.com/ttran375/comp228-lab2/actions/workflows/main.yml/badge.svg)](https://github.com/ttran375/comp228-lab2/actions/workflows/main.yml)
+
 ## Exercise 1
 
 Write a Java application that simulates a test. The test contains **at
