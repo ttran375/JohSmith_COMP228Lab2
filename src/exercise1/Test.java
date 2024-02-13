@@ -29,7 +29,7 @@ public final class Test {
      * Array of options for each question in the test.
      */
     private final String[][] options = {
-            { "1. JDK", "2. JVM", "3. IDE", "4. API" },
+            {"1. JDK", "2. JVM", "3. IDE", "4. API"},
             {
                     "1. Translates source code",
                     "2. Places program in memory",
@@ -42,7 +42,7 @@ public final class Test {
                     "3. Non-static Method",
                     "4. Class",
             },
-            { "1. Package", "2. Method", "3. IDE", "4. Function" },
+            {"1. Package", "2. Method", "3. IDE", "4. Function"},
             {
                     "1. class variables",
                     "2. constants",
@@ -54,7 +54,7 @@ public final class Test {
     /**
      * Array of correct answers for each question in the test.
      */
-    private final int[] answers = { 3, 1, 4, 1, 1 };
+    private final int[] answers = {3, 1, 4, 1, 1};
 
     /**
      * The score of the test.
@@ -77,7 +77,7 @@ public final class Test {
             if (!isValidAnswer(answer)) {
                 JOptionPane.showMessageDialog(
                         null,
-                        "Invalid input. Please enter a number between 1 and 4.");
+                        "Invalid input. Enter a number between 1 and 4.");
             }
         } while (!isValidAnswer(answer));
         checkAnswer(questionNumber, answer);
@@ -89,7 +89,7 @@ public final class Test {
      * @param answer the answer to check
      * @return true if the answer is valid, false otherwise
      */
-    private boolean isValidAnswer(String answer) {
+    private final boolean isValidAnswer(String answer) {
         try {
             int answerInt = Integer.parseInt(answer);
             return answerInt >= 1 && answerInt <= MAX_ANSWER;
@@ -129,7 +129,9 @@ public final class Test {
                 message = isCorrect ? "Good!" : "Wrong. Try once more";
                 break;
             case 2:
-                message = isCorrect ? "Keep up the good work!" : "Don't give up!";
+                message = isCorrect ? 
+                    "Keep up the good work!" :
+                    "Don't give up!";
                 break;
             default:
                 message = isCorrect ? "Nice work!" : "No. Keep trying..";
@@ -148,6 +150,9 @@ public final class Test {
         double percentage = (double) score / questions.length * 100;
         JOptionPane.showMessageDialog(
                 null,
-                "You scored " + String.format("%.2f", percentage) + "%" + " out of 100%");
+                "You scored " +
+                    String.format("%.2f", percentage) +
+                    "%" +
+                    " out of 100%");
     }
 }
