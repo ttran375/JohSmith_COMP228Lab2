@@ -7,6 +7,10 @@ import javax.swing.JOptionPane;
  * This class represents a test with multiple choice questions.
  */
 public final class Test {
+    public static void main(final String[] args) {
+        Test test = new Test();
+        test.inputAnswer();
+    }
 
     private static final int MAX_ANSWER = 4;
 
