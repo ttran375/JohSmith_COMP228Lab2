@@ -71,6 +71,7 @@ public final class Lotto {
                 return;
             }
         }
+
         JOptionPane.showMessageDialog(null, "Computer wins!");
     }
 }
