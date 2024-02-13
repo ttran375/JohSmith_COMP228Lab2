@@ -7,10 +7,16 @@ import java.util.Random;
  * This class generates random numbers for a Lotto game.
  */
 public final class Lotto {
+    /** Maximum number of iterations for the Lotto game. */
     private static final int MAX_ITERATIONS = 5;
+
+    /** Size of the array that stores the Lotto numbers. */
     private static final int ARRAY_SIZE = 3;
+
+    /** Maximum random number that can be generated for the Lotto game. */
     private static final int MAX_RANDOM = 9;
 
+    /** Array that stores the generated Lotto numbers. */
     private int[] numbers = new int[ARRAY_SIZE];
 
     /**
@@ -25,6 +31,7 @@ public final class Lotto {
 
     /**
      * Returns the generated numbers.
+     * 
      * @return array of generated numbers
      */
     public final int[] getNumbers() {
@@ -33,6 +40,7 @@ public final class Lotto {
 
     /**
      * Returns the sum of the generated numbers.
+     * 
      * @return sum of the numbers
      */
     public final int sum() {
@@ -48,7 +56,7 @@ public final class Lotto {
      * @param args should be final
      */
     public static void main(final String[] args) {
-        String input = JOptionPane.showInputDialog("Enter a number between 3 and 27");
+        String input = JOptionPane.showInputDialog("Number between 3 and 27: ");
         int userNumber = Integer.parseInt(input);
 
         for (int i = 0; i < MAX_ITERATIONS; i++) {
@@ -62,6 +70,8 @@ public final class Lotto {
                 return;
             }
         }
-        JOptionPane.showMessageDialog(null, "Computer wins! Better luck next time.");
+        JOptionPane.showMessageDialog(null, "Computer wins! Good luck next time.");
     }
 }
+ 
+     * 
