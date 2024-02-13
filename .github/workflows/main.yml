@@ -30,5 +30,6 @@ jobs:
           DEFAULT_BRANCH: main
           # To report GitHub Actions status checks
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_JAVA: true
+          VALIDATE_GOOGLE_JAVA_FORMAT: false
+          VALIDATE_JSCPD: false
 ...
