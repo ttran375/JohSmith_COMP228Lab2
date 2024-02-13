@@ -53,6 +53,7 @@ public final class Lotto {
 
     /**
      * Main method for the Lotto game.
+     * 
      * @param args should be final
      */
     public static void main(final String[] args) {
@@ -73,5 +74,3 @@ public final class Lotto {
         JOptionPane.showMessageDialog(null, "Computer wins! Good luck next time.");
     }
 }
- 
-     * 
