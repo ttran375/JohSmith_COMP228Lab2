@@ -97,8 +97,8 @@ public class Date {
         switch (month) {
             case FEBRUARY:
                 return isLeapYear(year)
-                    ? DAYS_IN_FEB_LEAP_YEAR
-                    : DAYS_IN_FEB_NON_LEAP_YEAR;
+                        ? DAYS_IN_FEB_LEAP_YEAR
+                        : DAYS_IN_FEB_NON_LEAP_YEAR;
             case APRIL:
             case JUNE:
             case SEPTEMBER:
@@ -115,8 +115,8 @@ public class Date {
 
     private static boolean isLeapYear(final int year) {
         return (year % LEAP_YEAR_DIVISOR_1 == 0
-            && year % LEAP_YEAR_DIVISOR_2 != 0)
-            || (year % LEAP_YEAR_DIVISOR_3 == 0);
+                && year % LEAP_YEAR_DIVISOR_2 != 0)
+                || (year % LEAP_YEAR_DIVISOR_3 == 0);
     }
 
     private static final int MONTHS_IN_YEAR = 12;
@@ -132,5 +132,31 @@ public class Date {
             month -= MONTHS_IN_YEAR;
             year++;
         }
+    }
+
+    private static final int SPECIFIC_YEAR = 2024;
+    private static final int DAYS_TO_ADD = 30;
+    private static final int MONTHS_TO_ADD = 3;
+    private static final int YEARS_TO_ADD = 3;
+
+    public static void main(final String[] args) {
+        Date date1 = new Date();
+        System.out.println("Default date: " + date1.toString());
+
+        Date date2 = new Date(1, 1, SPECIFIC_YEAR);
+        System.out.println("Specific date: " + date2.toString());
+
+        date2.add(DAYS_TO_ADD);
+        System.out.println("After adding 30 days: " + date2.toString());
+
+        date2.add(MONTHS_TO_ADD, DAYS_TO_ADD);
+        System.out.println(
+            "After adding 3 months and 30 days: " + date2.toString());
+
+        Date date3 = new Date(YEARS_TO_ADD, MONTHS_TO_ADD, DAYS_TO_ADD);
+        date2.add(date3);
+        System.out.println(
+            "After adding another date (3 years, 3 months, 30 days): "
+                + date2.toString());
     }
 }
