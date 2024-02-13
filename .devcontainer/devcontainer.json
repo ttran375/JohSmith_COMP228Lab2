@@ -1,4 +1,13 @@
 {
+    "name": "Java",
+    "image": "mcr.microsoft.com/devcontainers/java:1-21-bullseye",
+    "features": {
+        "ghcr.io/devcontainers/features/java:1": {
+            "version": "none",
+            "installMaven": "false",
+            "installGradle": "false"
+        }
+    },
     "customizations": {
         "vscode": {
             "extensions": [
@@ -8,9 +17,7 @@
                 "redhat.fabric8-analytics",
                 "sohibe.java-generate-setters-getters",
                 "streetsidesoftware.code-spell-checker",
-                "DavidAnson.vscode-markdownlint",
-                "EditorConfig.EditorConfig",
-                "ilkka.google-java-format"
+                "DavidAnson.vscode-markdownlint"
             ]
         }
     }
