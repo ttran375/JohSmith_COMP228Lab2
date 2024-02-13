@@ -37,7 +37,7 @@ public final class Test {
      * Array of options for each question in the test.
      */
     private final String[][] options = {
-            { "1. JDK", "2. JVM", "3. IDE", "4. API" },
+            {"1. JDK", "2. JVM", "3. IDE", "4. API"},
             {
                     "1. Translates source code",
                     "2. Places program in memory",
@@ -50,7 +50,7 @@ public final class Test {
                     "3. Non-static Method",
                     "4. Class",
             },
-            { "1. Package", "2. Method", "3. IDE", "4. Function" },
+            {"1. Package", "2. Method", "3. IDE", "4. Function"},
             {
                     "1. class variables",
                     "2. constants",
@@ -62,7 +62,7 @@ public final class Test {
     /**
      * Array of correct answers for each question in the test.
      */
-    private final int[] answers = { 3, 1, 4, 1, 1 };
+    private final int[] answers = {3, 1, 4, 1, 1};
 
     /**
      * The score of the test.
@@ -155,9 +155,9 @@ public final class Test {
         for (int i = 0; i < questions.length; i++) {
             simulateQuestion(i);
         }
-        final double PERCENTAGE_FACTOR = 100.0;
+        final double percentageFactor = 100.0;
         double percentage = (double) score / questions.length
-            * PERCENTAGE_FACTOR;
+            * percentageFactor;
         JOptionPane.showMessageDialog(
                 null,
                 "You scored "
