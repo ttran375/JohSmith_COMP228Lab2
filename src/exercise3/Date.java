@@ -4,21 +4,52 @@ package exercise3;
  * Represents a date with day, month, and year components.
  */
 public class Date {
+    /**
+     * The day component of the date.
+     */
     private int day;
+
+    /**
+     * The month component of the date.
+     */
     private int month;
+
+    /**
+     * The year component of the date.
+     */
     private int year;
+
+    /**
+ * The default day used when no day is specified.
+ */
+private static final int DEFAULT_DAY = 1;
+
+/**
+ * The default month used when no month is specified.
+ */
+private static final int DEFAULT_MONTH = 1;
+
+/**
+ * The default year used when no year is specified.
+ */
+private static final int DEFAULT_YEAR = 2022;
+
+/**
+ * The number of months in a year.
+ */
+private static final int MONTHS_IN_YEAR = 12;
 
     /**
      * Constructs a Date object with the given day, month, and year components.
      *
-     * @param day   The day component.
-     * @param month The month component.
-     * @param year  The year component.
+     * @param inputDay   The day component.
+     * @param inputMonth The month component.
+     * @param inputYear  The year component.
      */
-    public Date(int day, int month, int year) {
-        this.day = day;
-        this.month = month;
-        this.year = year;
+    public Date(final int inputDay, final int inputMonth, final int inputYear) {
+        this.day = inputDay;
+        this.month = inputMonth;
+        this.year = inputYear;
         normalize();
     }
 
@@ -26,28 +57,28 @@ public class Date {
      * Default constructor initializes the date to January 1, 2022.
      */
     public Date() {
-        this(1, 1, 2022);
+        this(DEFAULT_DAY, DEFAULT_MONTH, DEFAULT_YEAR);
     }
 
     /**
      * Adds the specified number of days to the date.
      *
-     * @param days The number of days to add.
+     * @param daysToAdd The number of days to add.
      */
-    public void add(int days) {
-        day += days;
+    public void add(final int daysToAdd) {
+        day += daysToAdd;
         normalize();
     }
 
     /**
      * Adds the specified number of months and days to the date.
      *
-     * @param months The number of months to add.
-     * @param days   The number of days to add.
+     * @param monthsToAdd The number of months to add.
+     * @param daysToAdd   The number of days to add.
      */
-    public void add(int months, int days) {
-        month += months;
-        day += days;
+    public void add(final int monthsToAdd, final int daysToAdd) {
+        month += monthsToAdd;
+        day += daysToAdd;
         normalize();
     }
 
@@ -56,7 +87,7 @@ public class Date {
      *
      * @param other The Date to add.
      */
-    public void add(Date other) {
+    public void add(final Date other) {
         year += other.year;
         month += other.month;
         day += other.day;
