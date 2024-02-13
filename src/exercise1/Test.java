@@ -33,7 +33,7 @@ public final class Test {
                     "3. Non-static Method",
                     "4. Class",
             },
-            { "1. Package", "2. Method", "3. IDE", "4. Function" },
+            {"1. Package", "2. Method", "3. IDE", "4. Function"},
             {
                     "1. class variables",
                     "2. constants",
@@ -42,7 +42,7 @@ public final class Test {
             },
     };
 
-    private final int[] answers = { 3, 1, 4, 1, 1 };
+    private final int[] answers = {3, 1, 4, 1, 1};
 
     private int score = 0;
 
