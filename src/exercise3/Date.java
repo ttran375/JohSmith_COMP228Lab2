@@ -5,23 +5,6 @@ public class Date {
     private int month;
     private int year;
 
-    private static final int DEFAULT_DAY = 1;
-    private static final int DEFAULT_MONTH = 1;
-    private static final int DEFAULT_YEAR = 2022;
-
-    private static final int JANUARY = 1;
-    private static final int FEBRUARY = 2;
-    private static final int MARCH = 3;
-    private static final int APRIL = 4;
-    private static final int MAY = 5;
-    private static final int JUNE = 6;
-    private static final int JULY = 7;
-    private static final int AUGUST = 8;
-    private static final int SEPTEMBER = 9;
-    private static final int OCTOBER = 10;
-    private static final int NOVEMBER = 11;
-    private static final int DECEMBER = 12;
-
     private static final int DAYS_IN_FEB_LEAP_YEAR = 29;
     private static final int DAYS_IN_FEB_NON_LEAP_YEAR = 28;
     private static final int DAYS_IN_SHORT_MONTH = 30;
@@ -35,6 +18,10 @@ public class Date {
         this.year = inputYear;
         normalize();
     }
+
+    private static final int DEFAULT_DAY = 1;
+    private static final int DEFAULT_MONTH = 1;
+    private static final int DEFAULT_YEAR = 2022;
 
     public Date() {
         this(DEFAULT_DAY, DEFAULT_MONTH, DEFAULT_YEAR);
@@ -63,6 +50,19 @@ public class Date {
         String monthText = getMonthText(month);
         return year + "-" + monthText + "-" + day;
     }
+
+    private static final int JANUARY = 1;
+    private static final int FEBRUARY = 2;
+    private static final int MARCH = 3;
+    private static final int APRIL = 4;
+    private static final int MAY = 5;
+    private static final int JUNE = 6;
+    private static final int JULY = 7;
+    private static final int AUGUST = 8;
+    private static final int SEPTEMBER = 9;
+    private static final int OCTOBER = 10;
+    private static final int NOVEMBER = 11;
+    private static final int DECEMBER = 12;
 
     public static String getMonthText(final int month) {
         switch (month) {
@@ -111,8 +111,14 @@ public class Date {
         }
     }
 
+    private static final int LEAP_YEAR_DIVISOR_1 = 4;
+    private static final int LEAP_YEAR_DIVISOR_2 = 100;
+    private static final int LEAP_YEAR_DIVISOR_3 = 400;
+
     private static boolean isLeapYear(final int year) {
-        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+        return (year % LEAP_YEAR_DIVISOR_1 == 0
+            && year % LEAP_YEAR_DIVISOR_2 != 0)
+            || (year % LEAP_YEAR_DIVISOR_3 == 0);
     }
 
     private void normalize() {

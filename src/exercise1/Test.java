@@ -3,28 +3,14 @@ package exercise1;
 import java.util.Random;
 import javax.swing.JOptionPane;
 
-/**
- * This class represents a test with multiple choice questions.
- */
 public final class Test {
-    /**
-     * The main entry point for the application.
-     *
-     * @param args The command-line arguments passed to the program.
-     */
     public static void main(final String[] args) {
         Test test = new Test();
         test.inputAnswer();
     }
 
-    /**
-     * The maximum number of answers allowed.
-     */
     private static final int MAX_ANSWER = 4;
 
-    /**
-     * Array of questions for the test.
-     */
     private final String[] questions = {
             "Question 1: Which of the following tools support the...",
             "Question 2: What is the main function of a Java...",
@@ -33,9 +19,6 @@ public final class Test {
             "Question 5: There are variables for which...",
     };
 
-    /**
-     * Array of options for each question in the test.
-     */
     private final String[][] options = {
             {"1. JDK", "2. JVM", "3. IDE", "4. API"},
             {
@@ -50,7 +33,7 @@ public final class Test {
                     "3. Non-static Method",
                     "4. Class",
             },
-            {"1. Package", "2. Method", "3. IDE", "4. Function"},
+            { "1. Package", "2. Method", "3. IDE", "4. Function" },
             {
                     "1. class variables",
                     "2. constants",
@@ -59,21 +42,10 @@ public final class Test {
             },
     };
 
-    /**
-     * Array of correct answers for each question in the test.
-     */
-    private final int[] answers = {3, 1, 4, 1, 1};
+    private final int[] answers = { 3, 1, 4, 1, 1 };
 
-    /**
-     * The score of the test.
-     */
     private int score = 0;
 
-    /**
-     * Simulates a question by displaying it and checking the answer.
-     *
-     * @param questionNumber the number of the question to simulate
-     */
     public void simulateQuestion(final int questionNumber) {
         String question = questions[questionNumber];
         String[] option = options[questionNumber];
@@ -91,12 +63,6 @@ public final class Test {
         checkAnswer(questionNumber, answer);
     }
 
-    /**
-     * Checks if the given answer is valid.
-     *
-     * @param answer the answer to check
-     * @return true if the answer is valid, false otherwise
-     */
     private boolean isValidAnswer(final String answer) {
         try {
             int answerInt = Integer.parseInt(answer);
@@ -106,12 +72,6 @@ public final class Test {
         }
     }
 
-    /**
-     * Checks the given answer and updates the score if it is correct.
-     *
-     * @param questionNumber the number of the question
-     * @param answer         the answer to check
-     */
     public void checkAnswer(final int questionNumber, final String answer) {
         if (Integer.parseInt(answer) == answers[questionNumber]) {
             score++;
@@ -121,11 +81,6 @@ public final class Test {
         }
     }
 
-    /**
-     * Generates a message based on whether the answer is correct or not.
-     *
-     * @param isCorrect true if the answer is correct, false otherwise
-     */
     public void generateMessage(final boolean isCorrect) {
         Random random = new Random();
         String message;
@@ -148,16 +103,13 @@ public final class Test {
         JOptionPane.showMessageDialog(null, message);
     }
 
-    /**
-     * Inputs the answer for each question and displays the score at the end.
-     */
     public void inputAnswer() {
         for (int i = 0; i < questions.length; i++) {
             simulateQuestion(i);
         }
         final double percentageFactor = 100.0;
         double percentage = (double) score / questions.length
-            * percentageFactor;
+                * percentageFactor;
         JOptionPane.showMessageDialog(
                 null,
                 "You scored "
