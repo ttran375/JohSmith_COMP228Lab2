@@ -1,6 +1,27 @@
 package exercise3;
 
 public class Date {
+    public static void main(String[] args) {
+        final int START_DAY = 1;
+        final int START_MONTH = 1;
+        final int START_YEAR = 2024;
+        final int DAYS_TO_ADD = 31;
+        final int MONTHS_TO_ADD = 29;
+    
+        Date date = new Date(START_DAY, START_MONTH, START_YEAR);
+        System.out.println(date.toString());
+    
+        date.add(DAYS_TO_ADD);
+        System.out.println(date.toString());
+    
+        date.add(0, MONTHS_TO_ADD);
+        System.out.println(date.toString());
+    
+        Date otherDate = new Date(START_DAY, START_MONTH, 1);
+        date.add(otherDate);
+        System.out.println(date.toString());
+    }
+
     private int day;
     private int month;
     private int year;
