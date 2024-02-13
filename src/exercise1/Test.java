@@ -89,7 +89,7 @@ public final class Test {
      * @param answer the answer to check
      * @return true if the answer is valid, false otherwise
      */
-    private final boolean isValidAnswer(String answer) {
+    private boolean isValidAnswer(String answer) {
         try {
             int answerInt = Integer.parseInt(answer);
             return answerInt >= 1 && answerInt <= MAX_ANSWER;
@@ -129,9 +129,9 @@ public final class Test {
                 message = isCorrect ? "Good!" : "Wrong. Try once more";
                 break;
             case 2:
-                message = isCorrect ? 
-                    "Keep up the good work!" :
-                    "Don't give up!";
+                message = isCorrect 
+                ? "Keep up the good work!" 
+                : "Don't give up!";
                 break;
             default:
                 message = isCorrect ? "Nice work!" : "No. Keep trying..";
@@ -150,9 +150,9 @@ public final class Test {
         double percentage = (double) score / questions.length * 100;
         JOptionPane.showMessageDialog(
                 null,
-                "You scored " +
-                    String.format("%.2f", percentage) +
-                    "%" +
-                    " out of 100%");
+                "You scored " 
+                    + String.format("%.2f", percentage)
+                    + "%"
+                    + " out of 100%");
     }
 }
